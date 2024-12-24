@@ -63,3 +63,15 @@ document.getElementById('generate-card').addEventListener('click', () => {
     clearGrid();
     generateBingoCard();
 });
+
+// Reset card (remove colors)
+function resetCard() {
+    const markedCells = document.querySelectorAll('.bingo-number.marked');
+    markedCells.forEach(cell => {
+        if (cell.textContent !== 'FREE') {
+            cell.classList.remove('marked');
+        }
+    });
+}
+
+document.getElementById('reset-card').addEventListener('click', resetCard);
